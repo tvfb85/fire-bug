@@ -1,10 +1,10 @@
 <div style="font-size:100px; font-family: Helvetica; margin:20px 0 0 0;letter-spacing:18.2px; text-shadow:8px 4px grey; text-align:center">
-  <%=@player_one_name.upcase%></br> vs </br><%=@player_two_name.upcase%>
+  <%=@game.player_one.name.upcase%></br> vs </br><%=@game.player_two.name.upcase%>
 </div>
 
 <h2 style="text-align:center;font-size:22px"><strong>Scores:</strong></h2>
 <div style="text-align:center; color:blue">
-  <p>   - - -   <%= @player_one_name %>: <strong style="color:red"><%= $player_one.hit_points %> HP</strong>   - - -   <%= @player_two_name %>: <strong style="color:red"><%= $player_two.hit_points %> HP </strong>  - - -   </p>
+  <p>   - - -   <%= @game.player_one.name %>: <strong style="color:red"><%= @game.player_one.hit_points %> HP</strong>   - - -   <%= @game.player_two.name %>: <strong style="color:red"><%= @game.player_two.hit_points %> HP </strong>  - - -   </p>
 </div>
 
 <div style="text-align:center;">

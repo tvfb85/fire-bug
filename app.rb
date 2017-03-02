@@ -19,6 +19,12 @@ class Firebug < Sinatra::Base
     erb(:play)
   end
 
+  get '/attack' do
+    @player_one_name = session[:player_one_name]
+    @player_two_name = session[:player_two_name]
+    erb(:attack)
+  end
+
 
   # start the server if ruby file executed directly
   run! if app_file == $0

@@ -19,3 +19,15 @@ RSpec.feature "See Hit Points" do
     expect(page).to have_content("Daniel: 60 HP")
   end
 end
+
+# As Player 1,
+# So I can win a game of Battle,
+# I want to attack Player 2, and I want to get a confirmation
+
+RSpec.feature "Attack" do
+  scenario "attack opponent" do
+    sign_in
+    click_link "Attack"
+    expect(page).to have_content("Jack attacked Daniel!")
+  end
+end

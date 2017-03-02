@@ -1,7 +1,6 @@
 # As two Players,
 # So we can play a personalised game of Battle,
 # We want to Start a fight by entering our names and seeing them
-
 RSpec.feature "Enter players" do
   scenario "players submit their names" do
     sign_in
@@ -12,7 +11,6 @@ end
 # As Player 1,
 # So I can see how close I am to winning
 # I want to see Player 2's Hit Points
-
 RSpec.feature "See Hit Points" do
   scenario "view opponent's hit points" do
     sign_in
@@ -23,7 +21,6 @@ end
 # As Player 1,
 # So I can win a game of Battle,
 # I want to attack Player 2, and I want to get a confirmation
-
 RSpec.feature "Attack" do
   scenario "attack opponent" do
     sign_in
@@ -49,7 +46,6 @@ end
 # As two Players,
 # So we can continue our game of Battle,
 # We want to switch turns
-
 RSpec.feature "Switching" do
   scenario "at the start" do
     sign_in
@@ -70,10 +66,22 @@ end
 # As Player 1,
 # So I can see how close I am to losing,
 # I want to see my own hit points
-
-RSpec.feature "View own hit points" do
-  scenario 'see Player 1 hit points' do
+RSpec.feature "View score" do
+  scenario 'see own hit points' do
       sign_in
       expect(page).to have_content 'Jack: 60 HP'
+    end
+end
+
+# As Player 1,
+# So I can lose a game of Battle,
+# I want Player 2 to attack me, and I want to get a confirmation
+RSpec.feature "Attack" do
+  scenario 'opponent attacks user' do
+      sign_in
+      click_link "Attack"
+      click_link "See scores"
+      click_link "Attack"
+      expect(page).to have_content("Daniel attacked Jack!")
     end
 end

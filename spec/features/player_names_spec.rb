@@ -66,3 +66,14 @@ RSpec.feature "Switching" do
     expect(page).not_to have_content "Jack's turn!"
   end
 end
+
+# As Player 1,
+# So I can see how close I am to losing,
+# I want to see my own hit points
+
+RSpec.feature "View own hit points" do
+  scenario 'see Player 1 hit points' do
+      sign_in
+      expect(page).to have_content 'Jack: 60 HP'
+    end
+end

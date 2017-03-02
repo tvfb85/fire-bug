@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/player'
 
 class Firebug < Sinatra::Base
   enable :sessions
@@ -22,6 +23,9 @@ class Firebug < Sinatra::Base
   get '/attack' do
     @player_one_name = $player_one.name
     @player_two_name = $player_two.name
+    @player_one = $player_one
+    @player_two = $player_two
+    @player_one.attack(@player_two)
     erb(:attack)
   end
 

@@ -2,8 +2,8 @@ require 'game'
 
 describe Game do
   subject(:game) { described_class.new(player_one, player_two) }
-  let(:player_one) { double :player }
-  let(:player_two) { double :player }
+  let(:player_one) { Player.new('Mickey', hit_points = Player::DEFAULT_HP) }
+  let(:player_two) { Player.new('Joe', hit_points = Player::DEFAULT_HP) }
 
   describe 'player one' do
     it 'instantiates the first player' do
@@ -32,6 +32,22 @@ describe Game do
     it 'player_two goes second' do
       game.switch_turns
       expect(game.current_turn).to eq(player_two)
+    end
+  end
+
+  describe '#winning' do
+    it 'hit points can reach zero' do
+      6.times { game.attack(player_two) }
+      expect(player_two.hit_points).to eq 0
+    end
+
+    it 'a winner is returned', :focus => true do
+      6.times { game.attack(player_two) }
+      p player_two.hit_points
+      p player_one.hit_points
+      p game.winner
+      p game.winner.hit_points
+      expect(game.winner.name).to eq player_one.name
     end
   end
 

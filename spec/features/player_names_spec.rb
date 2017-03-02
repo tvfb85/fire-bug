@@ -85,3 +85,18 @@ RSpec.feature "Attack" do
       expect(page).to have_content("Daniel attacked Jack!")
     end
 end
+
+
+# As a Player,
+# So I can Lose a game of Battle,
+# I want to see a 'Lose' message if I reach 0HP first
+
+RSpec.feature "Winning" do
+  scenario 'a player reaches 0 hit points' do
+      sign_in
+      10.times { click_link "Attack"
+      click_link "See scores" }
+      click_link "Attack"
+      expect(page).to have_content("Jack wins! Daniel has 0 hit points left")
+    end
+end

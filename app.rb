@@ -24,9 +24,16 @@ class Firebug < Sinatra::Base
   get '/attack' do
     @game = $game
     @game.attack(@game.opponent)
-    @game.switch_turns
-    erb :attack
+    if @game.winner
+      erb(:game_over)
+    else
+      erb :attack
+    end
   end
+
+  # get '/game_over' do
+  #   erb(:game_over)
+  # end
 
   # start the server if ruby file executed directly
   run! if app_file == $0

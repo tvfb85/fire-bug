@@ -45,3 +45,24 @@ RSpec.feature "Attack" do
     expect(page).not_to have_content("Daniel: 60 HP")
   end
 end
+
+# As two Players,
+# So we can continue our game of Battle,
+# We want to switch turns
+
+RSpec.feature "Switching" do
+  scenario "at the start" do
+    sign_in
+    expect(page).to have_content "Jack's turn!"
+  end
+end
+
+RSpec.feature "Switching" do
+  scenario "after first turn" do
+    sign_in
+    click_link "Attack"
+    click_link "See scores"
+    expect(page).to have_content "Daniel's turn!"
+    expect(page).not_to have_content "Jack's turn!"
+  end
+end

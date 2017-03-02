@@ -24,6 +24,7 @@ class Firebug < Sinatra::Base
   get '/attack' do
     @game = $game
     @game.attack(@game.player_two)
+    @game.switch_turns
     erb :attack
   end
 

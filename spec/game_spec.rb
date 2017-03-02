@@ -43,10 +43,6 @@ describe Game do
 
     it 'a winner is returned', :focus => true do
       6.times { game.attack(player_two) }
-      p player_two.hit_points
-      p player_one.hit_points
-      p game.winner
-      p game.winner.hit_points
       expect(game.winner.name).to eq player_one.name
     end
   end

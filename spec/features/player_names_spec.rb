@@ -5,7 +5,7 @@
 RSpec.feature "Enter players" do
   scenario "players submit their names" do
     sign_in
-    expect(page).to have_text("Jack vs Daniel")
+    expect(page).to have_text("JACK vs DANIEL")
   end
 end
 

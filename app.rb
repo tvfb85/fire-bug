@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/game'
 
 class Firebug < Sinatra::Base
   enable :sessions
@@ -26,7 +27,7 @@ class Firebug < Sinatra::Base
     @player_one = $player_one
     @player_two = $player_two
     Game.new.attack(@player_two)
-    erb(:attack)
+    erb :attack
   end
 
   # start the server if ruby file executed directly

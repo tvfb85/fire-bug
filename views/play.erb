@@ -1,7 +1,26 @@
-<%= @player_one_name %> vs <%= @player_two_name %>
+<div style="font-size:100px; font-family: Helvetica; margin:20px 0 0 0;letter-spacing:18.2px; text-shadow:8px 4px grey; text-align:center">
+  <%=@player_one_name.upcase%></br> vs </br><%=@player_two_name.upcase%>
+</div>
 
-<%= $player_one.name %>: <%= $player_one.hit_points %> HP
+<h2 style="text-align:center;font-size:22px"><strong>Scores:</strong></h2>
+<div style="text-align:center; color:blue">
+  <p>   - - -   <%= @player_one_name %>: <strong style="color:red"><%= $player_one.hit_points %> HP</strong>   - - -   <%= @player_two_name %>: <strong style="color:red"><%= $player_two.hit_points %> HP </strong>  - - -   </p>
+</div>
 
-<%= $player_two.name %>: <%= $player_two.hit_points %> HP
-
-<a href="/attack">Attack</a>
+<div style="text-align:center;">
+  <a style="text-decoration:none;color:white" href="/attack">
+    <button style="width:200px; background-color:orange;color:black;font-size:40px;">Attack</button>
+  </a>
+  <a style="text-decoration:none;color:white" href="/paralyse">
+    <button style="width:200px; background-color:orange;color:black;font-size:40px;">Paralyse</button>
+  </a>
+  <a style="text-decoration:none;color:white" href="/sleep">
+    <button style="width:200px; background-color:orange;color:black;font-size:40px;">Sleep</button>
+  </a>
+  <a style="text-decoration:none;color:white" href="/poison">
+    <button style="width:200px; background-color:orange;color:black;font-size:40px;">Poison</button>
+  </a>
+  <a style="text-decoration:none;color:white" href="/heal">
+    <button style="width:200px; background-color:orange;color:black;font-size:40px;">Heal</button>
+  </a>
+</div>

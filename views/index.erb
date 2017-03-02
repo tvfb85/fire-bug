@@ -1,5 +1,11 @@
-<form action='/player_names' method='post'>
-  <input type="text" name="player_one_name">
-  <input type="text" name="player_two_name">
-  <input type="submit" value="Submit players">
-</form>
+<wrapper style="background-color: #cccccc;text-align:center">
+    <h1 style="font-size: 56px; text-shadow: 2px 2px #ff0000">Fire Bug</h1>
+    <h3>Please sign in:<h3>
+      <div style="width:250px;margin:auto;">
+    <form action="/player_names" method="post">
+      <label style="font-size:18px; color:#493;" for="player_one_name">Player 1:</label><input style="margin: 13px 10px; color:black; background-color:#ddd" type="text" name="player_one_name">
+      <label style="font-size:18px; color:#493;" for="player_two_name">Player 2:</label><input style="margin: 13px 10px; color:black; background-color:#ddd" type="text" name="player_two_name">
+      <input style="margin: 20px auto; font-size: 20px;" type="submit" value="Submit players">
+    </form>
+  </div>
+</wrapper>

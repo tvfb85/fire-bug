@@ -4,10 +4,7 @@
 
 RSpec.feature "Enter players" do
   scenario "players submit their names" do
-    visit '/'
-    fill_in :player_one_name, :with => "Jack"
-    fill_in :player_two_name, :with => "Daniel"
-    click_button "Submit players"
+    sign_in
     expect(page).to have_text("Jack vs Daniel")
   end
 end
@@ -18,10 +15,7 @@ end
 
 RSpec.feature "See Hit Points" do
   scenario "view opponent's hit points" do
-    visit '/'
-    fill_in :player_one_name, :with => "Jack"
-    fill_in :player_two_name, :with => "Daniel"
-    click_button "Submit players"
+    sign_in
     expect(page).to have_content("Daniel: 60 HP")
   end
 end

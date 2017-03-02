@@ -7,7 +7,7 @@
   <p>   - - -   <%= @game.player_one.name %>: <strong style="color:red"><%= @game.player_one.hit_points %> HP</strong>   - - -   <%= @game.player_two.name %>: <strong style="color:red"><%= @game.player_two.hit_points %> HP </strong>  - - -   </p>
 </div>
 
-<h1><%= @game.current_turn.name %>'s turn!</h1>
+<h1 style="text-align:center"><%= @game.current_turn.name %>'s turn!</h1>
 
 <div style="text-align:center;">
   <a style="text-decoration:none;color:white" href="/attack">

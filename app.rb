@@ -2,7 +2,7 @@ require 'sinatra/base'
 
 class Firebug < Sinatra::Base
   get '/' do
-    'Hello Fire Bug!!'
+    'Testing infrastructure working!'
   end
 
   # start the server if ruby file executed directly

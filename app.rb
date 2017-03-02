@@ -25,7 +25,7 @@ class Firebug < Sinatra::Base
     @player_two_name = $player_two.name
     @player_one = $player_one
     @player_two = $player_two
-    @player_one.attack(@player_two)
+    Game.new.attack(@player_two)
     erb(:attack)
   end
 

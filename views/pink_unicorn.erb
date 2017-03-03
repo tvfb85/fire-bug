@@ -1,0 +1,17 @@
+<body style="padding:0; margin:0;background-image:url('https://s-media-cache-ak0.pinimg.com/564x/4b/cd/fd/4bcdfd0c5f8f182d906289da859a20e6.jpg'); border: 5px solid white">
+  <div style="background-color:black;margin:0px auto;height: 100%;width:80%; text-align:center">
+
+    <h2 style="padding:20px 0;font-size: 2em;color: white; margin:0"> Howling Unicorns! </h2>
+
+    <div style="clear:both;">
+      <iframe src="//giphy.com/embed/HN1Flf4bRihk4" width="340" height="340" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+    </div>
+
+    <h2 style="font-size: 2em;color: white"><%= @game.opponent.name.upcase %> attacked <%= @game.current_turn.name.upcase %>!</h2>
+
+    <a style="text-decoration:none;color:white" href="/play">
+      <button style="width:400px; background-color:orange;color:black;font-size:40px;">See scores</button>
+    </a>
+
+  </div>
+</body>

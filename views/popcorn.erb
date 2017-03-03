@@ -1,0 +1,17 @@
+<body style="padding:0; margin:0;background-image:url('http://cdn6.bigcommerce.com/s-gwfq85h/product_images/uploaded_images/popcorn.png?t=1471407390'); border: 5px solid white">
+  <div style="background-color:black;margin:0px auto;height: 100%;width:80%; text-align:center">
+
+    <h2 style="padding:20px 0;font-size: 2em;color: white; margin:0"> Salty or sweet? </h2>
+
+    <div style="clear:both;">
+      <iframe src="//giphy.com/embed/XXSiAgR5A3nbO" width="480" height="256" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+    </div>
+
+    <h2 style="font-size: 2em;color: white"><%= @game.opponent.name.upcase %> attacked <%= @game.current_turn.name.upcase %>!</h2>
+
+    <a style="text-decoration:none;color:white" href="/play">
+      <button style="width:400px; background-color:orange;color:black;font-size:40px;">See scores</button>
+    </a>
+
+  </div>
+</body>

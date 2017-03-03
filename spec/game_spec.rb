@@ -17,10 +17,10 @@ describe Game do
     end
   end
 
-  describe '#attack' do
-    it 'attacks the opponent' do
+  describe '#fire' do
+    it 'fires the opponent' do
       expect(player_two).to receive(:receive_hit)
-      game.attack(player_two)
+      game.fire(player_two)
     end
   end
 
@@ -37,12 +37,12 @@ describe Game do
 
   describe '#winning' do
     it 'hit points can reach zero' do
-      6.times { game.attack(player_two) }
+      4.times { game.grenade(player_two) }
       expect(player_two.hit_points).to eq 0
     end
 
     it 'a winner is returned', :focus => true do
-      6.times { game.attack(player_two) }
+      4.times { game.grenade(player_two) }
       expect(game.winner.name).to eq player_one.name
     end
   end
